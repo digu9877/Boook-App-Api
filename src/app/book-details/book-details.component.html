@@ -1,0 +1,38 @@
+<div class="jumbtron py-3" >
+  <h1 class="display-4 text-center">
+    Book Detail Register
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <app-book-details-form></app-book-details-form>
+  </div>
+  <div class="col-md-6">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let pd of  service.list ">
+            <td (click)="populateForm(pd)">{{pd.id}}</td>
+            <td (click)="populateForm(pd)" >{{pd.title}}</td>
+            <td (click)="populateForm(pd)">{{pd.author}}</td>
+            <td (click)="populateForm(pd)">{{pd.description}}</td>
+            <td>
+              <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.id)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+
+
+
